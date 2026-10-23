@@ -1,3 +1,4 @@
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar.jsx";
 import Hero from "./components/Hero.jsx";
 import StatusStrip from "./components/StatusStrip.jsx";
@@ -13,8 +14,9 @@ import FutureVision from "./components/FutureVision.jsx";
 import Disclaimer from "./components/Disclaimer.jsx";
 import FinalCTA from "./components/FinalCTA.jsx";
 import Footer from "./components/Footer.jsx";
+import PrivacyPolicy from "./components/PrivacyPolicy.jsx";
 
-export default function App() {
+function HomePage() {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <Navbar />
@@ -37,3 +39,13 @@ export default function App() {
     </div>
   );
 }
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+    </Routes>
+  );
+}
+

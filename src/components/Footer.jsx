@@ -1,4 +1,5 @@
 import { Activity } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const LINKS = [
   { id: "approach", label: "Approach" },
@@ -42,9 +43,18 @@ export default function Footer() {
 
         <div className="mt-10 flex flex-col-reverse items-center gap-4 border-t border-panel-line pt-6 sm:flex-row sm:justify-between">
           <p className="font-mono text-xs text-ink-faint">© 2026 VesselAI</p>
-          <span className="stamp">Academic / Research Prototype</span>
+          <div className="flex items-center gap-6">
+            <Link
+              to="/privacy-policy"
+              className="font-mono text-xs text-ink-faint transition-colors hover:text-ink-muted"
+            >
+              Privacy Policy
+            </Link>
+            <span className="stamp">Academic / Research Prototype</span>
+          </div>
         </div>
       </div>
     </footer>
   );
 }
+
